@@ -1,0 +1,43 @@
+{
+  "app": {
+    "name": "Cline Demo App",
+    "version": "1.0.0",
+    "description": "A demo project created by Cline showcasing JS, CSS, HTML, JSON, and nested files.",
+    "author": "Jay Gohil",
+    "license": "MIT"
+  },
+  "server": {
+    "host": "localhost",
+    "port": 3000,
+    "https": false
+  },
+  "ui": {
+    "theme": "light",
+    "primaryColor": "#4f46e5",
+    "secondaryColor": "#7c3aed",
+    "fontFamily": "Segoe UI, system-ui, sans-serif",
+    "animationsEnabled": true
+  },
+  "features": {
+    "counter": true,
+    "darkMode": false,
+    "analytics": false,
+    "notifications": true
+  },
+  "api": {
+    "baseUrl": "https://api.example.com/v1",
+    "timeout": 5000,
+    "retryAttempts": 3
+  },
+  "logging": {
+    "level": "info",
+    "destinations": ["console", "file"],
+    "logFile": "logs/app.log"
+  },
+  "build": {
+    "outputDir": "dist",
+    "minify": true,
+    "sourceMaps": false,
+    "assetHash": true
+  }
+}

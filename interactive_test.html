@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Test Page</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary:#4f46e5; --success:#22c55e; --danger:#ef4444;
+      --bg:#f9fafb; --surface:#ffffff; --border:#e5e7eb;
+      --text:#111827; --muted:#6b7280;
+    }
+    body { font-family:"Segoe UI",system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:32px 24px; }
+    .page-wrapper { max-width:760px; margin:0 auto; }
+    .page-header {
+      background:linear-gradient(135deg,var(--primary),#7c3aed);
+      color:#fff; padding:40px 32px; border-radius:16px;
+      text-align:center; margin-bottom:32px;
+      box-shadow:0 4px 20px rgba(79,70,229,.35);
+    }
+    .page-header h1 { font-size:2rem; margin-bottom:8px; }
+    .page-header p  { opacity:.85; font-size:1rem; }
+    .card {
+      background:var(--surface); border:1px solid var(--border);
+      border-radius:12px; padding:28px; margin-bottom:28px;
+      box-shadow:0 1px 6px rgba(0,0,0,.07);
+    }
+    .card h2 { font-size:1.25rem; margin-bottom:12px; color:var(--primary); }
+    .btn {
+      display:inline-flex; align-items:center; gap:6px;
+      padding:11px 24px; border:none; border-radius:8px;
+      font-size:.95rem; font-weight:600; cursor:pointer;
+      transition:transform .1s,box-shadow .2s;
+    }
+    .btn:active { transform:scale(.97); }
+    .btn:hover  { box-shadow:0 4px 14px rgba(0,0,0,.15); }
+    .btn-primary { background:var(--primary); color:#fff; }
+    .btn-success { background:var(--success); color:#fff; }
+    .btn-danger  { background:var(--danger);  color:#fff; }
+    .status-box {
+      margin-top:14px; padding:12px 16px; border-radius:8px;
+      font-size:.9rem; font-weight:600; display:none;
+    }
+    .status-box.show { display:block; }
+    .status-success { background:#dcfce7; color:#15803d; border:1px solid #bbf7d0; }
+    .status-info    { background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; }
+    .form-group { margin-bottom:18px; }
+    .form-group label { display:block; font-size:.875rem; font-weight:600; margin-bottom:6px; }
+    .form-control {
+      width:100%; padding:10px 14px; border:2px solid var(--border);
+      border-radius:8px; font-size:.95rem; color:var(--text);
+      background:var(--bg); outline:none; transition:border-color .2s;
+    }
+    .form-control:focus { border-color:var(--primary); }
+    .info-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; }
+    .info-tile {
+      background:linear-gradient(135deg,#eff6ff,#f5f3ff);
+      border:1px solid #c7d2fe; border-radius:10px;
+      padding:18px; text-align:center;
+    }
+    .info-tile .icon { font-size:2rem; margin-bottom:6px; }
+    .info-tile p    { font-size:.85rem; color:var(--muted); margin:0; }
+    .info-tile strong { font-size:1rem; display:block; color:var(--text); }
+    .scroll-section { margin-top:8px; }
+    .scroll-section h3 { margin-bottom:10px; font-size:1rem; color:var(--muted); }
+    footer { text-align:center; color:var(--muted); font-size:.85rem; padding:24px 0 0; border-top:1px solid var(--border); margin-top:16px; }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+  <header class="page-header">
+    <h1>🧪 Interactive Test Page</h1>
+    <p>Browser automation demo — button clicks, form input, form submit &amp; scrolling</p>
+  <!-- Step 1: Button Click -->
+  <section class="card" id="section-button">
+    <h2>🖱️ Step 1 – Click a Button</h2>
+    <p style="color:var(--muted);margin-bottom:16px;">Click the button below. Status confirms the action.</p>
+    <button id="btn-click-me" class="btn btn-primary">Click Me!</button>
+    <button id="btn-danger-click" class="btn btn-danger" style="margin-left:10px;">Alert Button</button>
+    <div id="btn-status" class="status-box status-success">
+      ✅ Button clicked! Event at <span id="btn-timestamp"></span>
+    </div>
+  </section>
+
+  <!-- Step 2: Text Input -->
+  <section class="card" id="section-input">
+    <h2>✍️ Step 2 – Input Text into a Form Field</h2>
+    <p style="color:var(--muted);margin-bottom:16px;">Type into the field. Live counter tracks input.</p>
+    <div class="form-group">
+      <label for="text-input">Your Message</label>
+      <input id="text-input" type="text" class="form-control" placeholder="Start typing here…" maxlength="120" />
+    </div>
+    <div id="input-status" class="status-box status-info">
+      📝 Input: "<span id="input-preview"></span>" · <span id="char-count">0</span>/120
+    </div>
+  </section>
+
+  <!-- Step 3: Form Submit -->
+  <section class="card" id="section-form">
+    <h2>📋 Step 3 – Submit a Form</h2>
+    <p style="color:var(--muted);margin-bottom:16px;">Fill in the fields and hit <strong>Submit</strong>.</p>
+    <form id="demo-form" novalidate>
+      <div class="form-group">
+        <label for="form-name">Full Name</label>
+        <input id="form-name" type="text" class="form-control" placeholder="e.g. Jay Gohil" required />
+      </div>
+      <div class="form-group">
+        <label for="form-email">Email Address</label>
+        <input id="form-email" type="email" class="form-control" placeholder="e.g. jay@example.com" required />
+      </div>
+      <div class="form-group">
+        <label for="form-message">Message</label>
+        <textarea id="form-message" class="form-control" rows="3" placeholder="Write something…" style="resize:vertical;"></textarea>
+      </div>
+      <button type="submit" id="btn-submit" class="btn btn-success">🚀 Submit Form</button>
+    </form>
+    <div id="form-status" class="status-box status-success">
+      🎉 Form submitted! Name: <strong id="submitted-name"></strong> | Email: <strong id="submitted-email"></strong>
+    </div>
+  </section>
+
+  <!-- Step 4: Scroll Target -->
+  <section class="card" id="section-scroll">
+    <h2>⬇️ Step 4 – Scroll Down the Page</h2>
+    <p style="color:var(--muted);margin-bottom:20px;">Reaching here means the scroll worked!</p>
+    <div class="info-grid">
+      <div class="info-tile"><div class="icon">🌐</div><strong>Browser</strong><p>Chromium via Puppeteer</p></div>
+      <div class="info-tile"><div class="icon">⚡</div><strong>Runtime</strong><p>Node.js + async/await</p></div>
+      <div class="info-tile"><div class="icon">🎯</div><strong>Selectors</strong><p>CSS &amp; ID based</p></div>
+      <div class="info-tile"><div class="icon">📸</div><strong>Screenshot</strong><p>Captured after scroll</p></div>
+      <div class="info-tile"><div class="icon">🧩</div><strong>Project</strong><p>Cline Demo App</p></div>
+      <div class="info-tile"><div class="icon">✅</div><strong>Status</strong><p>All steps passing</p></div>
+    </div>
+  </section>
+
+  <div class="scroll-section">
+    <h3>─── Additional content to ensure scroll depth ───</h3>
+    <div class="info-grid" id="bottom-anchor">
+      <div class="info-tile"><div class="icon">📌</div><strong>Anchor</strong><p>Bottom of page</p></div>
+      <div class="info-tile"><div class="icon">🏁</div><strong>End</strong><p>Scroll complete</p></div>
+      <div class="info-tile"><div class="icon">🎊</div><strong>Done!</strong><p>All 5 steps done</p></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Interactive Test Page · Built with Cline &copy; 2026</p>
+    <p id="scroll-indicator" style="margin-top:6px;color:var(--primary);font-weight:600;"></p>
+  </footer>
+<script>
+  /* Button click */
+  const btnClick  = document.getElementById('btn-click-me');
+  const btnDanger = document.getElementById('btn-danger-click');
+  const btnStatus = document.getElementById('btn-status');
+  const btnTs     = document.getElementById('btn-timestamp');
+  function showBtnStatus() { btnTs.textContent = new Date().toLocaleTimeString(); btnStatus.classList.add('show'); }
+  btnClick.addEventListener('click',  showBtnStatus);
+  btnDanger.addEventListener('click', () => { showBtnStatus(); alert('🔔 Alert button triggered!'); });
+
+  /* Text input */
+  const textInput    = document.getElementById('text-input');
+  const inputStatus  = document.getElementById('input-status');
+  const inputPreview = document.getElementById('input-preview');
+  const charCount    = document.getElementById('char-count');
+  textInput.addEventListener('input', () => {
+    const val = textInput.value;
+    inputPreview.textContent = val.slice(0,40) + (val.length > 40 ? '…' : '');
+    charCount.textContent = val.length;
+    inputStatus.classList.toggle('show', val.length > 0);
+  });
+
+  /* Form submit */
+  const demoForm       = document.getElementById('demo-form');
+  const formStatus     = document.getElementById('form-status');
+  const submittedName  = document.getElementById('submitted-name');
+  const submittedEmail = document.getElementById('submitted-email');
+  demoForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    submittedName.textContent  = document.getElementById('form-name').value  || '(empty)';
+    submittedEmail.textContent = document.getElementById('form-email').value || '(empty)';
+    formStatus.classList.add('show');
+    console.log('[Form] Submitted:', { name: submittedName.textContent, email: submittedEmail.textContent });
+  });
+
+  /* Scroll indicator */
+  window.addEventListener('scroll', () => {
+    const pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+    document.getElementById('scroll-indicator').textContent = 'Scroll position: ' + pct + '%';
+  });
+
+  console.log('[Interactive Test Page] Loaded and ready.');
+</script>
+</body>
+</html>
