@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" class="base">
+
+<head>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="google" content="notranslate">
+	<meta http-equiv="Content-Language" content="en">
+	<meta name="viewport" content="width=device-width, viewport-fit=cover" />
+	<meta name="referrer" content="strict-origin-when-cross-origin"/>
+	<meta name="color-scheme" content="light dark"/>
+	
+	<meta name='description' content="Sourcegraph is a web-based code search and navigation tool for dev teams. Search, navigate, and review code. Find answers." />
+		
+	
+	<title>Sourcegraph</title>
+    
+
+		<link rel="modulepreload" href="/.assets/_sk/_app/immutable/entry/start.DYsnQ7ZX.js">
+		<link rel="modulepreload" href="/.assets/_sk/_app/immutable/chunks/entry.aiQwn0UY.js">
+		<link rel="modulepreload" href="/.assets/_sk/_app/immutable/chunks/scheduler.CqkSXVuZ.js">
+		<link rel="modulepreload" href="/.assets/_sk/_app/immutable/chunks/index.BM7pmxy7.js">
+		<link rel="modulepreload" href="/.assets/_sk/_app/immutable/chunks/control.Ciqojzjn.js">
+		<link rel="modulepreload" href="/.assets/_sk/_app/immutable/entry/app.CMYiswW1.js">
+		<link rel="modulepreload" href="/.assets/_sk/_app/immutable/chunks/preload-helper.fyNiFMZ3.js">
+		<link rel="modulepreload" href="/.assets/_sk/_app/immutable/chunks/stores.lOx-tECa.js">
+		<link rel="modulepreload" href="/.assets/_sk/_app/immutable/chunks/navigation.vkEENLrL.js">
+		<link rel="modulepreload" href="/.assets/_sk/_app/immutable/chunks/index.C2dSnpnf.js">
+
+    <script ignore-csp>
+        const userPreference = localStorage.getItem('sourcegraph-theme') || 'System'
+        const theme =
+            (userPreference === 'System' && window.matchMedia('(prefers-color-scheme: dark)').matches) ||
+            userPreference === 'Dark'
+                ? 'theme-dark'
+                : 'theme-light'
+        document.documentElement.classList.add(theme)
+    </script>
+
+	<link id='sourcegraph-chrome-webstore-item' rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/dgjhfomjieaadpoljlnidmbgkdffpack">
+	<link rel="search" href="/opensearch.xml" type="application/opensearchdescription+xml" title="Sourcegraph Search">
+	
+	
+	<link rel="preload" href="/.assets/img/sourcegraph-mark.svg?v2" as="image" />
+	
+	
+	
+	
+	<script ignore-csp>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.defer=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-TB4NLS7');</script>
+	
+	
+	<script src='https://js.sentry-cdn.com/ae2f74442b154faf90b5ff0f7cd1c618.min.js' crossorigin="anonymous"></script>
+	
+	
+	<script ignore-csp>
+		window.context = {"externalURL":"https://sourcegraph.com","xhrHeaders":{"X-Requested-With":"Sourcegraph","x-sourcegraph-client":"https://sourcegraph.com"},"userAgentIsBot":false,"assetsRoot":"/.assets","version":"295068_2024-10-11_5.8-d637e71a7106","isAuthenticatedUser":true,"currentUser":{"__typename":"User","id":"VXNlcjoyODYwNDg=","databaseID":286048,"username":"jay.gohil","avatarURL":"https://lh3.googleusercontent.com/a/ACg8ocLp_9-_brU8hVNzdEAMQAy-q-JuyP96v7ZsXCifuqwP=s96-c","displayName":"Jay","siteAdmin":false,"url":"/users/jay.gohil","settingsURL":"/users/jay.gohil/settings","viewerCanAdminister":true,"tosAccepted":false,"hasVerifiedEmail":true,"organizations":{"__typename":"OrgConnection","nodes":[]},"session":{"canSignOut":true},"emails":[{"email":"jay.gohil@fibilabs.tech","isPrimary":true,"verified":true}],"latestSettings":{"id":173585,"contents":"{\n  \"openInEditor\": {},\n  \"codeIntel.mixPreciseAndSearchBasedReferences\": false\n}"},"permissions":{"__typename":"PermissionConnection","nodes":[{"__typename":"Permission","id":"UGVybWlzc2lvbjoxMg==","displayName":"CODY#ACCESS"},{"__typename":"Permission","id":"UGVybWlzc2lvbjo3","displayName":"OWNERSHIP#ASSIGN"},{"__typename":"Permission","id":"UGVybWlzc2lvbjoz","displayName":"BATCH_CHANGES#READ"}]}},"temporarySettings":{"__typename":"TemporarySettings","contents":"{\"search.navigation\": false, \"user.lastDayActive\": \"Sat Oct 12 2024\", \"cody.onboarding.step\": 2, \"user.daysActiveCount\": 250, \"user.themePreference\": \"system\", \"repo.commitPage.diffMode\": \"unified\", \"cody.onboarding.completed\": true, \"search.input.recentSearches\": [{\"query\": \"context:global repo:^github\\\\.com/golang/go$ lang:Python \", \"limitHit\": false, \"timestamp\": \"2024-08-05T16:52:34.061Z\", \"resultCount\": 1}, {\"query\": \"lang:JavaScript \", \"limitHit\": true, \"timestamp\": \"2024-08-01T14:55:28.471Z\", \"resultCount\": 10000}, {\"query\": \"repo:^github\\\\.com/k8sgpt-ai/k8sgpt$ \", \"limitHit\": false, \"timestamp\": \"2024-07-31T18:24:05.412Z\", \"resultCount\": 1104}, {\"query\": \"context:global \\\"Error 101: service failed\\\"\", \"limitHit\": false, \"timestamp\": \"2024-07-31T18:22:02.243Z\", \"resultCount\": 2}, {\"query\": \"context:global kubernetes\", \"limitHit\": true, \"timestamp\": \"2024-07-31T18:10:33.830Z\", \"resultCount\": 10000}, {\"query\": \"KUBERNETES\", \"limitHit\": true, \"timestamp\": \"2024-07-31T18:08:23.788Z\", \"resultCount\": 10000}, {\"query\": \"context:global operator\", \"limitHit\": true, \"timestamp\": \"2024-07-31T16:38:18.617Z\", \"resultCount\": 10000}, {\"query\": \"context:global repo:^github\\\\.com/kubernetes/kubectl$ \", \"limitHit\": false, \"timestamp\": \"2024-07-31T16:37:40.264Z\", \"resultCount\": 1}, {\"query\": \"context:global k8s\", \"limitHit\": true, \"timestamp\": \"2024-07-31T16:32:41.543Z\", \"resultCount\": 10000}, {\"query\": \"context:global k8s lang:go -file:_test\\\\.\\\\w+$ archived:yes fork:yes -file:(^|/)vendor/\", \"limitHit\": true, \"timestamp\": \"2024-07-31T16:31:41.120Z\", \"resultCount\": 10000}, {\"query\": \"context:global k8s lang:go -file:_test\\\\.\\\\w+$ archived:yes fork:yes\", \"limitHit\": true, \"timestamp\": \"2024-07-31T16:31:40.040Z\", \"resultCount\": 10000}, {\"query\": \"context:global k8s lang:go -file:_test\\\\.\\\\w+$\", \"limitHit\": true, \"timestamp\": \"2024-07-31T16:31:25.451Z\", \"resultCount\": 10000}, {\"query\": \"context:global k8s lang:python\", \"limitHit\": true, \"timestamp\": \"2024-07-31T16:29:51.985Z\", \"resultCount\": 10000}, {\"query\": \"context:global k8s lang:typescript\", \"limitHit\": true, \"timestamp\": \"2024-07-31T16:29:33.110Z\", \"resultCount\": 10000}, {\"query\": \"k8s lang:typescript\", \"limitHit\": true, \"timestamp\": \"2024-07-31T16:29:14.716Z\", \"resultCount\": 10000}, {\"query\": \"k8s\", \"limitHit\": true, \"timestamp\": \"2024-07-31T16:29:06.018Z\", \"resultCount\": 10000}, {\"query\": \"k8s type:symbol\", \"limitHit\": true, \"timestamp\": \"2024-07-31T16:26:44.822Z\", \"resultCount\": 10000}, {\"query\": \"\", \"limitHit\": false, \"timestamp\": \"2024-07-30T20:46:05.551Z\", \"resultCount\": 0}, {\"query\": \"repo:^github\\\\.com/sindresorhus/awesome$ \", \"limitHit\": false, \"timestamp\": \"2024-07-30T20:33:53.872Z\", \"resultCount\": 1}, {\"query\": \"repo:^github\\\\.com/freeCodeCamp/freeCodeCamp$ \", \"limitHit\": false, \"timestamp\": \"2024-07-30T20:33:34.510Z\", \"resultCount\": 1}], \"webNext.welcomeOverlay.dismissed\": true}"},"sentryDSN":"https://1603afe0cbf07123cfdef2286d1b98d3@o19358.ingest.sentry.io/1391511","openTelemetry":{"endpoint":"/-/debug/otlp"},"siteID":"SourcegraphWeb","siteGQLID":"U2l0ZToic2l0ZSI=","debug":false,"needsSiteInit":false,"emailEnabled":true,"site":{"auth.public":true,"update.channel":"release"},"needServerRestart":false,"deployType":"kubernetes","sourcegraphDotComMode":true,"accessTokensAllow":"all-users-create","accessTokensAllowNoExpiration":true,"accessTokensExpirationDaysDefault":90,"accessTokensExpirationDaysOptions":[7,14,30,60,90],"allowSignup":false,"resetPasswordEnabled":false,"authMinPasswordLength":12,"authPasswordPolicy":{"enabled":false,"numberOfSpecialCharacters":0,"requireAtLeastOneNumber":false,"requireUpperAndLowerCase":false},"authProviders":[{"isBuiltin":false,"noSignIn":false,"displayName":"Sourcegraph Accounts","displayPrefix":null,"serviceType":"openidconnect","authenticationURL":"/.auth/openidconnect/login?pc=sams","serviceID":"https://accounts.sourcegraph.com","clientID":"sams_cid_018d5780-6b5e-7df4-a3a0-f8afe81bcd9b","requiredForAuthz":false},{"isBuiltin":false,"noSignIn":false,"displayName":"Sourcegraph Operators","displayPrefix":null,"serviceType":"sourcegraph-operator","authenticationURL":"/.auth/sourcegraph-operator/login?pc=sourcegraph-operator","serviceID":"https://sourcegraph.okta.com","clientID":"0oab8yir27sMwMSnI5d7","requiredForAuthz":false}],"primaryLoginProvidersCount":1,"authAccessRequest":null,"branding":{"brandName":"Sourcegraph"},"batchChangesEnabled":false,"batchChangesDisableWebhooksWarning":false,"batchChangesWebhookLogsEnabled":false,"codyEnabledOnInstance":true,"codyEnabledForCurrentUser":true,"codyRequiresVerifiedEmail":true,"codeSearchEnabledOnInstance":true,"executorsEnabled":true,"codeIntelAutoIndexingEnabled":true,"codeIntelAutoIndexingAllowGlobalPolicies":false,"codeInsightsEnabled":false,"applianceUpdateTarget":"","applianceMenuTarget":"","codeIntelligenceEnabled":true,"searchContextsEnabled":true,"notebooksEnabled":false,"codeMonitoringEnabled":false,"searchAggregationEnabled":true,"ownEnabled":true,"searchJobsEnabled":false,"RedirectUnsupportedBrowser":false,"productResearchPageEnabled":true,"experimentalFeatures":{"cody.serverSideContext":{"intentDetectionAPI":{"default":{"url":"http://34.41.73.87:8000/predict/search_chat"}},"reranker":{"apiKey":"Zurgr2uC0fAHsv4zz7RgaOtjazbMMmFdrNT7J0Zm","type":"cohere"}},"pagure":"enabled","ranking":{"flushWallTimeMS":1000,"maxQueueSizeBytes":50000000,"maxReorderDurationMS":200,"maxReorderQueueSize":768},"rateLimitAnonymous":500,"scipBasedAPIs":true,"search.index.revisions":[{"name":"^src\\.fedoraproject\\.org/","revisions":["f35","f34","f33","epel8","epel8-playground","epel7"]}],"searchJobs":false},"licenseInfo":{"batchChanges":null},"hashedLicenseKey":"a100872ea194617c888f9e2831471329e463ce0d4787ac1f808a1e6d14ae3640","outboundRequestLogLimit":0,"disableFeedbackSurvey":false,"needsRepositoryConfiguration":false,"extsvcConfigFileExists":false,"extsvcConfigAllowEdits":false,"runningOnMacOS":false,"svelteKit":{"enabledRoutes":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],"showToggle":true,"knownRoutes":["^/robots\\.txt[/]?$","^/sitemap(?:(?:_(?:[0-9]+))?)\\.xml\\.gz[/]?$","^/favicon\\.ico[/]?$","^/opensearch\\.xml[/]?$","^/-/logout[/]?$","^/-/sign-up[/]?$","^/-/request-access[/]?$","^/-/site-init[/]?$","^/-/verify-email[/]?$","^/-/sign-in[/]?$","^/-/sign-out[/]?$","^/-/unlock-account[/]?$","^/-/unlock-user-account[/]?$","^/-/reset-password-init[/]?$","^/-/reset-password-code[/]?$","^/-/check-username-taken/(?:[^/]+)[/]?$","^/-/editor[/]?$","^/-/debug/headers[/]?$","^/-/debug","^/gophercon[/]?$","^/(?:(?:(?:(?:[^@/-]|(?:[^/@]{2,}))/)*(?:[^@/-]|(?:[^/@]{2,}))))(?:(?:@(?:(?:[^@=/.-]|(?:[^=/@.]{2,}))/)*(?:[^@=/.-]|(?:[^=/@.]{2,})))?)/\\.tree(?:.*)[/]?$","^/tools[/]?$","^/site-admin/usage-statistics/archive[/]?$","^/site-admin/data-export/archive[/]?$","^/site-admin/pings/latest[/]?$","^[/]?$","^/sign-in[/]?$","^/ping-from-self-hosted[/]?$","^/githubapp/","^/githubapp/state[/]?$","^/githubapp/new-app-state[/]?$","^/githubapp/redirect[/]?$","^/githubapp/setup[/]?$","^/insights","^/search-jobs","^/setup","^/batch-changes","^/code-monitoring","^/notebooks","^/request-access","^/search/console[/]?$","^/api/console[/]?$","^/sign-up[/]?$","^/organizations","^/teams","^/settings","^/site-admin","^/contexts","^/saved-searches","^/prompts","^/cody/dashboard[/]?$","^/cody/manage[/]?$","^/cody/subscription[/]?$","^/cody/chat[/]?$","^/cody/chat/(?:[^/]+)[/]?$","^/unlock-account/(?:[^/]+)[/]?$","^/password-reset[/]?$","^/survey[/]?$","^/survey/(?:[^/]+)[/]?$","^/post-sign-up[/]?$","^/cody/manage/subscription/new[/]?$","^/embed","^/users/(?:[^/]+)/settings","^/user","^/users/(?:[^/]+)","^/search[/]?$","^/search/stream[/]?$","^/search/badge[/]?$","^/(?:(?:about|blog|contact|customers|docs|handbook|help/terms|jobs|news|plan|pricing|privacy|security|terms))[/]?$","^/(?:(?:kubernetes|stanford|stackstorm|temporal|o3de|chakraui|julia|backstage))[/]?$","^/cncf[/]?$","^/devtooltime","^/login[/]?$","^/careers[/]?$","^/extensions","^/help"]},"frontendCodyProConfig":{"stripePublishableKey":"pk_live_1LPIDxv3bZH5wTv9NRcu9Sik","sscBaseUrl":"","useEmbeddedUI":false}}
+		window.pageError =  null 
+	</script>
+	
+
+	
+	
+	<script ignore-csp type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "Sourcegraph",
+			"url": "https://sourcegraph.com",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": {
+					"@type": "EntryPoint",
+					"urlTemplate": "https://sourcegraph.com/search?q={search_term_string}&utm_source=google-search-result&utm_campaign=google-search-result-searchbox"
+				},
+				"query-input": "required name=search_term_string"
+			}
+		}
+	</script>
+	
+</head>
+
+<body data-sveltekit-preload-data data-sveltekit-preload-code="hover">
+	
+
+    
+        <div ignore-csp style="display: contents">
+
+			<script>
+				{
+					__sveltekit_1ye52ra = {
+						base: ""
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("/.assets/_sk/_app/immutable/entry/start.DYsnQ7ZX.js"),
+						import("/.assets/_sk/_app/immutable/entry/app.CMYiswW1.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		
+</div>
+
+	<noscript>
+        
+        
+        <iframe ignore-csp src="https://www.googletagmanager.com/ns.html?id=GTM-TB4NLS7" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        
+        
+
+		<p>Sourcegraph is a web-based code search and navigation tool for dev teams. Search, navigate, and review code. Find answers.</p>
+		<br><br><br>
+        You need to enable JavaScript to run this app.
+	</noscript>
+
+	
+</body>
+
+</html>

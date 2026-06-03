@@ -1,12 +1,12 @@
 # Node dependencies
 node_modules/
 
-# npm lock (optional – include if you want reproducible installs)
-# package-lock.json
-
 # macOS
 .DS_Store
 
 # Logs
 *.log
 logs/
+
+# Google App Engine generated folder
+appengine-generated/
